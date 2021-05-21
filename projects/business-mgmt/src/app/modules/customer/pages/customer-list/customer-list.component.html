@@ -1,0 +1,25 @@
+<!-- <ng-template #itemTemplate let-item="item" let-index="index" let-onDelete="onDelete">
+  <td><a routerLink="./{{ item.id }}">{{item.customer_code}}</a></td>
+  <td>{{item.customer_name}}</td>
+  <td>{{item.owner_name}}</td>
+  <td>{{item.customer_phone}}</td>
+  <td>{{item.state}}</td>
+  <td *ngIf="service.canChange | async">
+    <a *ngIf="item.state === '新资料' && perm" nz-popconfirm nzPopconfirmTitle="确认删除客户代码为{{item.customer_code}}的客户资料吗？"
+    (nzOnConfirm)="onDelete(item, index)">删除</a>
+    <span *ngIf="item.state !== '新资料' || !perm">删除</span>
+  </td>
+</ng-template>
+<ng-template #headerTemplate>
+  <th nzShowSort nzSortKey="customer_code">客户代码</th>
+  <th nzShowSort nzSortKey="customer_name">客户名称</th>
+  <th nzShowSort nzSortKey="owner">业务员</th>
+  <th nzShowSort nzSortKey="customer_phone">联系电话</th>
+  <th nzShowSort nzSortKey="state">资料状态</th>
+  <th *ngIf="service.canChange | async">操作</th>
+</ng-template>
+<cy-data-table-list [headerTemplate]="headerTemplate" [itemTemplate]="itemTemplate"
+ [showOrderNumber]="true" #tableList>
+</cy-data-table-list> -->
+
+客户管理

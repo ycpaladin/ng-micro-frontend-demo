@@ -1,0 +1,115 @@
+<!-- <ng-template #itemTemplate let-item="item" let-index="index" let-onDelete="onDelete">
+  <td>
+    <a [nzTooltipTitle]="item.contract_code" nzTooltipPlacement="topCenter" nz-tooltip class="contract_code"
+      routerLink="./{{item.id}}">{{item.contract_code}}</a>
+  </td>
+  <td>{{item.owner_display}}</td>
+  <td>{{item.customer_code}}</td>
+  <td>{{item.customer_name}}</td>
+  <td>
+    <div
+      [nzTooltipTitle]="item.contract_description"
+      [nzOverlayClassName]="item.contract_description.length > 16 ? 'contract-description-tooltip' : null"
+      nzTooltipPlacement="topCenter"
+      nz-tooltip
+      class="description">{{item.contract_description}}</div>
+  </td>
+  <td>{{item.create_time | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+  <td>{{item.state}}</td>
+  <td>
+    <span *ngIf="item.state === '待审核' else signNoTemplate" nz-popover nzOverlayClassName="contract-signflow-tips" [nzPopoverContent]="signFlowTemplate"
+      nzPlacement="top">{{item.sign_no}}</span>
+      <ng-template #signFlowTemplate>
+        <div class="contract-sign-flow">
+          <span>审批进度：</span>
+          <span class="value">{{item.approval_progress}}</span>
+          <span class="sign-label">当前审批人：</span>
+          <span nz-tooltip [nzTooltipTitle]="approverTemplate" class="value">
+            <span *ngFor="let approver of item.current_approver" style="color: #333;">{{approver}}</span>
+            <ng-template #approverTemplate>
+              <div *ngFor="let approver of item.current_approver">{{approver}}</div>
+            </ng-template>
+
+          </span>
+        </div>
+      </ng-template>
+      <ng-template #signNoTemplate>
+        {{item.sign_no}}
+      </ng-template>
+  </td>
+  <td>{{item.quotation_status_display}}</td>
+  <td>{{item.quoted_price | number:"1.0-4"}}<span *ngIf="item.quoted_price"> 元/PCS</span></td>
+  <td class="handlers">
+    <ng-container>
+      <a nz-popover *ngIf="item.state==='已审核' && (service.canChange | async) else priceDisableTpl" nzOverlayClassName="contract-signflow-tips" nzPopoverPlacement="topRight"
+        [nzPopoverContent]="contractPriceTemplate" [nzPopoverTrigger]="'click'">
+        <i nz-icon nzType="money-collect" nzTheme="outline"></i>
+        <ng-template #contractPriceTemplate>
+          <div class="contract-sign-flow">
+            <span>请填写报价信息：</span>
+            <nz-input-group style="width: 52%;margin-right: 10px;" nzAddOnAfter="元/PCS">
+              <input #price nz-input class="value" cyPureNumberInput [ngModel]="item.quoted_price | number:'1.0-4'" />
+            </nz-input-group>
+            <button class="sure" nz-button nzType="primary" (click)="submitQuotePrice(item, price.value)">确认</button>
+          </div>
+        </ng-template>
+      </a>
+      <ng-template #priceDisableTpl>
+        <i nz-icon nzType="money-collect" nzTheme="outline" style="color: #ccc; cursor: not-allowed;"></i>
+      </ng-template>
+    </ng-container>
+    <nz-divider nzType="vertical"></nz-divider>
+    <a routerLink="./{{item.id}}">
+      <i nz-icon nzType="eye" nzTheme="outline"></i>
+    </a>
+    <nz-divider nzType="vertical"></nz-divider>
+    <ng-template #otherTemplate>
+      <i class="iconfont icon-shanchu- g-del" style="color: #ccc; cursor: not-allowed;"></i>
+    </ng-template>
+    <ng-container *ngIf="item.state==='新资料' && (service.canChange | async) else otherTemplate">
+      <a nz-popconfirm nzPopconfirmTitle="确实要删除吗？" (nzOnConfirm)="onDelete(item, index)">
+        <i class="iconfont icon-shanchu- g-del"></i>
+      </a>
+    </ng-container>
+  </td>
+</ng-template>
+<ng-template #headerTemplate let-sortChange="sortChange" let-mapOfSort="mapOfSort">
+  <th nzShowSort (nzSortChange)="sortChange('contract_code', $event)" [(nzSort)]="mapOfSort.contract_code">
+    合同单号
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('owner', $event)" [(nzSort)]="mapOfSort.owner">
+    业务员
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('customer_code', $event)" [(nzSort)]="mapOfSort.customer_code">
+    客户代码
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('customer_name', $event)" [(nzSort)]="mapOfSort.customer_name">
+    客户名称
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('contract_description', $event)"
+    [(nzSort)]="mapOfSort.contract_description">
+    合同描述
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('create_time', $event)" [(nzSort)]="mapOfSort.create_time">
+    创建时间
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('state', $event)" [(nzSort)]="mapOfSort.state">
+    资料状态
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('sign_no', $event)" [(nzSort)]="mapOfSort.sign_no">
+    审批单号
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('quotation_status', $event)" [(nzSort)]="mapOfSort.quotation_status">
+    报价状态
+  </th>
+  <th nzShowSort (nzSortChange)="sortChange('quoted_price', $event)" [(nzSort)]="mapOfSort.quoted_price">
+    报价信息
+  </th>
+  <th>
+    操作
+  </th>
+</ng-template>
+<cy-data-table-list [headerTemplate]="headerTemplate" [itemTemplate]="itemTemplate" [showOrderNumber]="true" #tableList>
+</cy-data-table-list>
+ -->
+合同信息

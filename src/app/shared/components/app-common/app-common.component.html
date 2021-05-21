@@ -1,0 +1,16 @@
+<ng-container *ngIf="isAloneStart">
+  <cy-main>
+    <ng-container class="logo">
+      <img src="assets/images/logo@2x.png" alt="" />
+      <img src="assets/images/line.png" alt="" />
+      <h3>
+        英飞联
+      </h3>
+    </ng-container>
+    <router-outlet></router-outlet>
+    <ng-container class="copyright">
+      Copyright©2019 北京创源微致软件有限公司.All rights reserved.
+    </ng-container>
+  </cy-main>
+</ng-container>
+<router-outlet *ngIf="!isAloneStart"></router-outlet>

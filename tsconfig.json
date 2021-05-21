@@ -1,0 +1,31 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@models": ["./src/app/core/typings/index.ts"],
+      "@config": ["./src/app/core/configs/index.ts"],
+      "@configs": ["./src/app/core/configs/index.ts"],
+      "@services": ["./src/app/core/services/index.ts"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@systemShared/*": ["projects/system-mgmt/src/app/shared/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false
+  }
+}

@@ -1,0 +1,57 @@
+<!-- <cy-data-table-list
+  #printTableList
+  showOrderNumber
+  [headerTemplate]="headerTemplate"
+  [itemTemplate]="itemTemplate"></cy-data-table-list>
+<ng-template #headerTemplate>
+  <th>配置名称</th>
+  <th>功能模块</th>
+  <th>打印内容</th>
+  <th>打印机类型</th>
+  <th>打印机IP</th>
+  <th>打印机端口</th>
+  <th>打印模板</th>
+  <th>创建人</th>
+  <th>创建时间</th>
+  <th>最后更新时间</th>
+  <th>状态</th>
+  <th>操作</th>
+</ng-template>
+<ng-template #itemTemplate let-item="item" let-index="index" let-onDelete="onDelete">
+  <td>
+    <a routerLink="./{{item.id}}">{{item.conf_name}}</a>
+  </td>
+  <td>{{item.function_name}}</td>
+  <td>{{item.print_content}}</td>
+  <td>{{item.printer_type}}</td>
+  <td>{{item.printer_IP}}</td>
+  <td>{{item.printer_port}}</td>
+  <td>{{item.label_template_display}}</td>
+  <td>{{item.creator_display}}</td>
+  <td>{{item.create_time | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+  <td>{{item.last_operate_time | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+  <td [class]="item.state === 'OFF' ? 'off' : 'on'">{{item.state === 'OFF' ? '停用' : '启用'}}</td>
+  <td>
+    <div>
+      <a *ngIf="(service.canChange | async) && item.state === 'ON' else offTpl" (click)="updatePrintState(item.id, 'disable')">停用</a>
+      <ng-template #offTpl>
+        <span *ngIf="item.state === 'ON'" class="disabled-btn">停用</span>
+      </ng-template>
+      <a *ngIf="(service.canChange | async) && item.state === 'OFF' else onTpl" (click)="updatePrintState(item.id, 'enable')">启用</a>
+      <ng-template #onTpl>
+        <span *ngIf="item.state === 'OFF'" class="disabled-btn">启用</span>
+      </ng-template>
+      <nz-divider nzType="vertical"></nz-divider>
+      <a *ngIf="(service.canChange | async) else deleteTpl"
+        nz-popconfirm
+        nzPopconfirmTitle="确定要删除吗？"
+        nzPopconfirmPlacement="top"
+        (nzOnConfirm)="onDelete(item, index)">删除</a>
+      <ng-template #deleteTpl>
+        <span class="disabled-btn">删除</span>
+      </ng-template>
+    </div>
+  </td>
+</ng-template>
+ -->
+打印配置

@@ -1,0 +1,38 @@
+{
+  "/app-workbench": {
+    "target": "http://localhost:4201",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info",
+    "cookieDomainRewrite": {
+      "*": "localhost:4200"
+    }
+  },
+  "/app-system": {
+    "target": "http://localhost:4202",
+    "secure": false,
+    "changeOrigin": false,
+    "logLevel": "info",
+    "cookieDomainRewrite": {
+      "*": "localhost:4200"
+    }
+  },
+  "/app-business": {
+    "target": "http://localhost:4203",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info",
+    "cookieDomainRewrite": {
+      "*": "localhost:4200"
+    }
+  },
+  "/smes": {
+    "target": "http://10.6.2.30:9999/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info",
+    "cookieDomainRewrite": {
+      "*": "localhost:4200"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<router-outlet></router-outlet>
+<nz-layout>
+  <nz-header>
+    <div class="logo"></div>
+  </nz-header>
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light">
+      <ul nz-menu nzMode="inline" class="sider-menu">
+        <li nz-submenu nzOpen nzIcon="user" nzTitle="业务管理">
+          <ul>
+            <li nz-menu-item nzMatchRouter routerLink="/business_mgmt/sale_order_mgmt/customer">客户管理</li>
+            <li nz-menu-item nzMatchRouter routerLink="/business_mgmt/sale_order_mgmt/contract_information">合同信息</li>
+            <li nz-menu-item nzMatchRouter routerLink="/business_mgmt/sale_order_mgmt/test2">test2</li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="系统管理" nzIcon="">
+          <ul>
+            <li nz-menu-item nzMatchRouter routerLink="/system_mgmt/basic_config/data-enumeration">不良类型配置</li>
+            <li nz-menu-item nzMatchRouter routerLink="/system_mgmt/basic_config/print_configuration">打印配置</li>
+            <li nz-menu-item nzMatchRouter routerLink="/system_mgmt/basic_config/test1">test1</li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-layout class="inner-layout">
+      <nz-content>
+        <div id="app-host-container">
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>
